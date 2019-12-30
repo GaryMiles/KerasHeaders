@@ -1,3 +1,14 @@
+def print_inputs():
+	print("convert: X_train")
+	print("sigmoid_CNN: flatten, x, neurons")
+	print("softmax_CNN: flatten, x, neurons, final")
+	print("embedding_CNN: vocab_size,max_length,x,neurons")
+	print("vector: X_train, X_test")
+
+def print_outputs():
+	print("All CNN return model")
+	print("Vector: X_train_pad, X_test_pad, vocab_size")
+	
 def imports():
 	import numpy as np
 	import pandas as pd
@@ -57,8 +68,4 @@ def vector(X_train, X_test):
 	X_train_pad = pad_sequences(X_train_tokens, maxlen=max_length, padding='post')
 	X_test_pad = pad_sequences(X_test_tokens, maxlen=max_length, padding='post')
 
-	return X_train_pad, X_test_pad
-
-
-
-
+	return X_train_pad, X_test_pad, vocab_size
