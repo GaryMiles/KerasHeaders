@@ -12,7 +12,7 @@ def print_outputs():
 def imports():
 	import numpy as np
 	import pandas as pd
-	import tensor as tf
+	import tensorflow as tf
 	from tensorflow import keras
 	from keras.layers import Flatten, Dense, Dropout, Embedding
 	from keras.models import Sequential
