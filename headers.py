@@ -9,6 +9,13 @@ def print_outputs():
 	print("All CNN return model")
 	print("Vector: X_train_pad, X_test_pad, vocab_size")
 	
+def print_descriptions():
+	print("convert: Take text normalized")
+	print("sigmoid_CNN: CNN with Sigmoid @end")
+	print("softmax_CNN: CNN with Softmax @end")
+	print("embedding_CNN: CNN for vectors")
+	print("vector: Vectorize input")
+	
 def imports():
 	print("import numpy as np")
 	print("import pandas as pd")
