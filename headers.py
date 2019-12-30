@@ -28,7 +28,7 @@ def convert(X_train):
 	import re
 	from bs4 import BeautifulSoup
 	for i in range(len(X_train)):
-		X_train[i] = BeautifulSoup(X_train[i])
+		X_train[i] = BeautifulSoup(X_train[i], features="lxml")
 		X_train[i] = re.sub("[^a-zA-z]", " ", X_train[i].get_text())
 		X_train[i] = X_train[i].lower()
 
