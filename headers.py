@@ -10,12 +10,12 @@ def print_outputs():
 	print("Vector: X_train_pad, X_test_pad, vocab_size")
 	
 def imports():
-	import numpy as np
-	import pandas as pd
-	import tensorflow as tf
-	from tensorflow import keras
-	from keras.layers import Flatten, Dense, Dropout, Embedding
-	from keras.models import Sequential
+	print("import numpy as np")
+	print("import pandas as pd")
+	print("import tensorflow as tf")
+	print("from tensorflow import keras")
+	print("from keras.layers import Flatten, Dense, Dropout, Embedding")
+	print("from keras.models import Sequential")
 
 def convert(X_train):
 	import re
