@@ -33,6 +33,11 @@ def convert(X_train):
 		X_train[i] = X_train[i].lower()
 
 def sigmoid_CNN(flatten, x, neurons):
+	import tensorflow as tf
+	from tensorflow import keras
+	from keras.layers import Flatten, Dense, Dropout, Embedding
+	from keras.models import Sequential
+	
 	model = Sequential()
 	if(flatten == True):
 		model.add(Flatten())
@@ -42,6 +47,11 @@ def sigmoid_CNN(flatten, x, neurons):
 	return model
 
 def softmax_CNN(flatten, x, neurons, final):
+	import tensorflow as tf
+	from tensorflow import keras
+	from keras.layers import Flatten, Dense, Dropout, Embedding
+	from keras.models import Sequential
+	
 	model = Sequential()
 	if(flatten == True):
 		model.add(Flatten())
@@ -51,6 +61,11 @@ def softmax_CNN(flatten, x, neurons, final):
 	return model
 
 def embedding_CNN(vocab_size,max_length,x,neurons):
+	import tensorflow as tf
+	from tensorflow import keras
+	from keras.layers import Flatten, Dense, Dropout, Embedding
+	from keras.models import Sequential
+	
 	model = Sequential()
 	model.add(Embedding(vocab_size, input_length=max_length))
 	for i in range(x+1):
