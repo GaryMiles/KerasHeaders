@@ -71,3 +71,5 @@ def vector(X_train, X_test):
 	max_length = 25
 	X_train = pad_sequences(X_train, maxlen=max_length, padding='post')
 	X_test = pad_sequences(X_test, maxlen=max_length, padding='post')
+	
+	return X_train, X_test
