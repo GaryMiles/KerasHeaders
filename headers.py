@@ -67,7 +67,7 @@ def embedding_CNN(vocab_size,max_length,x,neurons):
 	from keras.models import Sequential
 	
 	model = Sequential()
-	model.add(Embedding(vocab_size, input_length=max_length))
+	model.add(Embedding(vocab_size, input_length=max_length, output_dim=neurons[0]))
 	for i in range(x+1):
 		model.add(Dense(neurons[i], activation="relu"))
 	model.add(Dense(1, activation="sigmoid"))
