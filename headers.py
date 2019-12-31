@@ -63,11 +63,12 @@ def softmax_CNN(flatten, x, neurons, final):
 def embedding_CNN(vocab_size,max_length,x,neurons):
 	import tensorflow as tf
 	from tensorflow import keras
-	from keras.layers import Flatten, Dense, Dropout, Embedding
+	from keras.layers import Flatten, Dense, Dropout, Embedding, GlobalAveragePooling1D
 	from keras.models import Sequential
 	
 	model = Sequential()
 	model.add(Embedding(vocab_size, input_length=max_length, output_dim=neurons[0]))
+	model.add(GlobalAveragePooling1D())
 	for i in range(x):
 		model.add(Dense(neurons[i], activation="relu"))
 	model.add(Dense(1, activation="sigmoid"))
