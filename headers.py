@@ -72,6 +72,7 @@ def embedding_CNN(vocab_size,max_length,x,neurons):
 	for i in range(x):
 		model.add(Dense(neurons[i], activation="relu"))
 	model.add(Dense(1, activation="sigmoid"))
+	model.compile(optimizer="adam", loss="binary_crossentropy", metrics=["accuracy"])
 	return model
 
 def vector(X_train, X_test):
