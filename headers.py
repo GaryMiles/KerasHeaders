@@ -59,20 +59,15 @@ def embedding_CNN(vocab_size,max_length,x,neurons):
 	return model
 
 def vector(X_train, X_test):
-	from tensorflow.python.keras.preprocessing.text import Tokenizer
-	from tensorflow.python.keras.preprocessing.sequence import pad_sequences
+	from numpy import array
+	from keras.preprocessing.text import one_hot
+	from keras.preprocessing.sequence import pad_sequences
+	
+	vocab_size = 500
 
-	tokenizer_obj = Tokenizer()
-	total = str(X_train + X_test)
-	tokenizer_obj.fit_on_texts(str(total))
+	X_train = [one_hot(d, vocab_size,filters='!"#$%&()*+,-./:;<=>?@[\]^_`{|}~',lower=True, split=' ') for d in X_train]
+	X_test = [one_hot(d, vocab_size,filters='!"#$%&()*+,-./:;<=>?@[\]^_`{|}~',lower=True, split=' ') for d in X_test]
 
-	max_length = max([len(s.split()) for s in total])
-	vocab_size = len(tokenizer_obj.word_index) + 1
-
-	X_train_tokens = tokenizer_obj.texts_to_sequences(X_train)
-	X_test_tokens = tokenizer_obj.texts_to_sequences(X_test)	
-
-	X_train_pad = pad_sequences(X_train_tokens, maxlen=max_length, padding='post')
-	X_test_pad = pad_sequences(X_test_tokens, maxlen=max_length, padding='post')
-
-	return X_train_pad, X_test_pad, vocab_size
+	max_length = 25
+	X_train = pad_sequences(X_train, maxlen=max_length, padding='post')
+	X_test = pad_sequences(X_test, maxlen=max_length, padding='post')
